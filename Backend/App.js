@@ -1,16 +1,32 @@
-const express=require("express")
+import express from"express";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+import {config }from "dotenv";
+import morgan from "morgan";
+import userRoutes from "./routes/user.routes.js"
+config();
 
-const port=3000;
-const app=express();
+const app=express()
 
-app.get("/",(req,res)=>{
-    res.send("this is our first server")
+app.use(express.json())
+
+app.use(cors({
+    origin:[process.env.FRONTEND_URL],
+    credentials:true
+}));
+
+app.use(cookieParser());
+
+app.use(morgan("dev"));
+
+app.use("/ping",(req,res)=>{
+    res.send('/pong');
 })
-app.get("/home",(req,res)=>{
-    res.send("this is our home server")
+
+app.use("/api/v1/user",userRoutes)
+
+app.all('*',(req,res)=>{
+    res.status(400).send("OOPS!! 404 page not found")
 })
 
-
-app.listen(port,()=>{
-   console.log(`server is running port:${port}`)
-})
+export default app;
