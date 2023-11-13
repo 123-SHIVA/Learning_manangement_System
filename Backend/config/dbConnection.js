@@ -5,9 +5,11 @@ mongoose.set("strictQuery",false);
 const connectionToDB=async()=>{
       try {
         const {connection}=await mongoose.connect(
-            process.env.MONGO_URI || "mongodb://127.0.0.1:27017/lms"
+            process.env.MONGO_URL || "mongodb://127.0.0.1:27017/LMS"
         )
+        // ek baat puchu isme to  direct me LMS ke andar ja rahe hai use create bhi krna padta hai na syad ya nhi ta ha
         if(connection){
+            console.log('------------------',connection);
             console.log(`connected to mongoDB:${connection.host}`)
         }
       } catch (e) {
