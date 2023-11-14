@@ -44,12 +44,17 @@ const userSchema=new Schema({
 
     },
     role:{
-        type:'string',
+        type:String,
         enum:["USER",'ADMIN'],
         default:'USER'
     },
     forgotPasswordToken:String,
-    forgotPasswordExpiry:Date
+    forgotPasswordExpiry:Date,
+
+    subscription:{
+        type:String,
+        status:String
+    }
 
 },
   { timestamps:true}
