@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("daisyui"),require('@tailwindcss/line-clamp')],
 }
 
+//1 to kahi hai hi nhi bhut hai kya
