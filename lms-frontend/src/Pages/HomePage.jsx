@@ -16,7 +16,7 @@ function HomePage(){
                         online Courses
                     </span>
                     </h1>
-                    <p className="text-xl w-1/2 text-gray-200">
+                    <p className="text-lg w-1/2 text-gray-200 my-1">
                         We have large library of courses taught by highly skilled and qualified faculties at a very affordable cost.
                     </p>
 
@@ -30,7 +30,7 @@ function HomePage(){
                         <Link to="/contact">
                             <button className="border border-yellow-500 px-5 py-3 rounded-md font-semibold text-lg cursor-pointer 
                             hover:bg-yellow-600 transition-all ease-in-out">
-                                Explore courses
+                                Contact us
                             </button>
                         </Link>
                     </div>

@@ -15,7 +15,7 @@ const connectionToDB=async()=>{
       } catch (e) {
         console.log(e);
         process.exit(1)
-        
+        //thank you hata diji itti si chijh me time laga rahe the 
       }
 }
 
