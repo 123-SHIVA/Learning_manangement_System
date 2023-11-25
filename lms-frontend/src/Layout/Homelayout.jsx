@@ -61,7 +61,7 @@ const handleClick=(e)=>{
                     <label htmlFor='my-drawer' className='drawer-overlay'>
                       
                     </label>
-                    <ul className='menu p-4 w-46 sm:w-80 bg-base-300 text-base-content relative'>
+                    <ul className='menu p-4 w-46 h-[100%] sm:w-80 bg-base-300 text-base-content relative'>
                         <li className='w-fit absolute right-2 z-50'>
                             <button onClick={hideDrawer}>
                             <AiFillCloseCircle/>
@@ -88,9 +88,9 @@ const handleClick=(e)=>{
                             <Link to="/about">About us</Link>
                         </li>
 
-                        <li className='absolute bottom-4 w-[90%]'>
                         {
                             !isLoggedIn && (
+                                <li className='absolute bottom-4 w-[90%]'>
                                 <div className='w-full flex itmes-center justify-center'>
                                     <button className='btn-primary px-4 py-1 font-semibold rounded-md w-full bg-blue-300'>
 
@@ -102,24 +102,29 @@ const handleClick=(e)=>{
                                     </button>
 
                                 </div>
+                        </li>
                             )
                         }
+                    
+
                         {
                             isLoggedIn && (
+                                <li className='absolute bottom-4 w-[90%]'>
                                 <div className='w-full flex itmes-center justify-center'>
                                     <button className='btn-primary px-4 py-1 font-semibold rounded-md w-full bg-blue-300'>
 
                                         <Link to="/user/profile">Profile</Link>
                                     </button>
-                                    <button onClick={handleClick} className='btn-secondary px-4 py-1 font-semibold rounded-md w-full bg-red-400'>
+                                    <button className='btn-secondary px-4 py-1 font-semibold rounded-md w-full bg-red-400'>
 
-                                        <Link to="/logout">Logout</Link>
+                                        <Link onClick={handleClick}>Logout</Link>
                                     </button>
 
                                 </div>
+                        </li>
                             )
                         }
-                        </li>
+                    
 
                     
 
