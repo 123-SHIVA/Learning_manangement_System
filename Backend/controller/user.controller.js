@@ -65,7 +65,7 @@ const register = async (req, res, next) => {
 
   await user.save();
 
-  User.password = undefined;
+  User.password = undefined; 
 
   const token = await user.generateJWTToken();
 
